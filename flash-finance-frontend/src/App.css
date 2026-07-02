@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Professional Deep Blue */
+  
+  /* FIX 1: Allow body to stretch as content grows */
+  min-height: 100vh; 
+  
+  /* FIX 2: Move flex layouts from the body to your App wrappers */
+  display: block; 
+  
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* FIX 3: Make browser scrollbars work properly */
+  overflow-y: auto; 
+}
+
+/* NEW ADDITION: This centers your side-by-side components on the screen layout */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allows sections to collapse neatly on smaller screens */
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  outline: none;
+}
+
+.btn {
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%); /* Bright Cyan Gradient */
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+}
+
+/* Breathing pulse indicator loop for micro-animations */
+@keyframes pulse {
+  0% { transform: translateY(-50%) scale(1); opacity: 1; }
+  50% { transform: translateY(-50%) scale(1.15); opacity: 0.5; }
+  100% { transform: translateY(-50%) scale(1); opacity: 1; }
+}
